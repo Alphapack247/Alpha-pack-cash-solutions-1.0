@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Repayments - Admin Panel</title>
+
+  <!-- Bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4f6f8;
+    }
+    .sidebar {
+      height: 100vh;
+      background-color: #2c3e50;
+      color: #fff;
+      padding: 1rem;
+    }
+    .sidebar a {
+      color: #fff;
+      display: block;
+      padding: 0.75rem 1rem;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-bottom: 0.5rem;
+    }
+    .sidebar a:hover, .sidebar a.active {
+      background-color: #3498db;
+    }
+    .main-content {
+      padding: 2rem;
+    }
+    .header-bar {
+      background-color: #fff;
+      padding: 1rem;
+      border-bottom: 1px solid #ddd;
+    }
+    .dashboard-title {
+      margin: 0;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+    table {
+      background-color: #fff;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <div class="col-md-3 sidebar">
+        <h4>Admin Panel</h4>
+        <a href="admin.html">Dashboard</a>
+        <a href="loan-requests.html">Loan Requests</a>
+        <a href="approved-loans.html">Approved Loans</a>
+        <a href="repayments.html" class="active">Repayments</a>
+        <a href="users.html">Users</a>
+        <a href="settings.html">Settings</a>
+        <a href="index.html" class="text-danger">Log Out</a>
+      </div>
+
+      <!-- Main Content -->
+      <div class="col-md-9 main-content">
+        <div class="header-bar">
+          <h2 class="dashboard-title">Repayment Records</h2>
+        </div>
+
+        <div class="table-responsive mt-4">
+          <table class="table table-striped table-hover">
+            <thead class="table-dark">
+              <tr>
+                <th>Student ID</th>
+                <th>Loan Amount</th>
+                <th>Amount Paid</th>
+                <th>Balance</th>
+                <th>Repayment Date</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>STU1045</td>
+                <td>P500</td>
+                <td>P650</td>
+                <td>P0</td>
+                <td>2025-04-15</td>
+                <td><span class="badge bg-success">Paid</span></td>
+              </tr>
+              <tr>
+                <td>STU1066</td>
+                <td>P600</td>
+                <td>P200</td>
+                <td>P400</td>
+                <td>2025-04-16</td>
+                <td><span class="badge bg-warning text-dark">Pending</span></td>
+              </tr>
+              <!-- Add more rows dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+  
+</body>
+</html>
